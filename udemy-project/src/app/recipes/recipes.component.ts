@@ -11,9 +11,15 @@ import { RecipeService } from './recipe.service';
 export class RecipesComponent implements OnInit {
   @Input() selectedRecipe: Recipe;
 
-  constructor() { }
+  //this component and all the other components in this (recipe folder) will use the same instance of this service and on ngOnInt you set up a listener
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+    this.recipeService.recipeSelected.subscribe(
+      (recipe: Recipe) => {
+        this.selectedRecipe = recipe;
+      }
+    )
   }
 
 }
