@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Recipe } from './recipes.model';
 import { RecipeService } from './recipe.service';
 
 @Component({
@@ -9,17 +8,12 @@ import { RecipeService } from './recipe.service';
   providers: [RecipeService]
 })
 export class RecipesComponent implements OnInit {
-  @Input() selectedRecipe: Recipe;
 
   //this component and all the other components in this (recipe folder) will use the same instance of this service and on ngOnInt you set up a listener
-  constructor(private recipeService: RecipeService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.recipeService.recipeSelected.subscribe(
-      (recipe: Recipe) => {
-        this.selectedRecipe = recipe;
-      }
-    )
+    
   }
 
 }
