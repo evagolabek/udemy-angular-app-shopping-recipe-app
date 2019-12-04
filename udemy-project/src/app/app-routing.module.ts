@@ -8,10 +8,10 @@ const appRoutes: Routes = [
     path: 'shopping-list',
     loadChildren: './shopping-list/shopping-list.module#ShoppingListModule'
   },
-  // {
-  //   path: 'auth',
-  //   loadChildren: './auth/auth.module#AuthModule'
-  // }
+  {
+    path: 'auth',
+    loadChildren: './auth/auth.module#AuthModule'
+  }
 ];
 
 @NgModule({
