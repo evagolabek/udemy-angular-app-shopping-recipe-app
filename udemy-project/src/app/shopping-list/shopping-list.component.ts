@@ -30,7 +30,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     //   }
     // );
 
-    this.loggingService.printLog('Hello from ShoppingListComponent ngOnInit!');
+    // this.loggingService.printLog('Hello from ShoppingListComponent ngOnInit!');
   }
 
   onEditItem(index: number) {
